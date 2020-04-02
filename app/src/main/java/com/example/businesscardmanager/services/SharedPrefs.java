@@ -30,7 +30,6 @@ public class SharedPrefs  {
 
     //set the currents user info
     public void setCurrentUser(User user){
-        Toast.makeText(context, "user password "+user.getPassword(), Toast.LENGTH_SHORT).show();
         SharedPreferences.Editor editor = this.pref.edit();
         editor.putString(CURRENT_USER_NAME,  user.getName());
         editor.putString(CURRENT_USER_EMAIL,  user.getEmailAdress());
@@ -66,7 +65,6 @@ public class SharedPrefs  {
             user.setCompanyName(pref.getString(CURRENT_USER_COMPANY,null));
             user.setEmailAdress(email);
 
-        Toast.makeText(context, "name "+user.getName(), Toast.LENGTH_SHORT).show();
         return user;
     }
 

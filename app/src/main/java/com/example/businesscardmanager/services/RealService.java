@@ -25,9 +25,11 @@ public class RealService {
 
     public User getUserWithEmailPassword(String email, String password){
 
-         User user =   this.realm.where(User.class).equalTo("emailAdress",email).findFirst();
-
-        Toast.makeText(context, "user password "+user.getPassword(), Toast.LENGTH_SHORT).show();
+         User user =   this.realm.where(User.class).equalTo("emailAdress",email)
+                 .and()
+                 .equalTo("password",password)
+                 .findFirst();
+         
         return user;
     }
 
